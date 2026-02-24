@@ -6,14 +6,13 @@ Chat-up! is a real-time, lightweight chat application built with a modern and re
 
 - **Real-Time Messaging**: Built on WebSockets for instant, low-latency communication.
 - **Dynamic Avatars**: Automatically generated user avatars based on usernames.
-- **Emoji Picker**: Built-in emoji support to express yourself easily.
 - **Chat Management**: Option to cleanly clear your chat history with specific users.
 - **Live Active Users**: See who is currently online in the contact sidebar.
 - **Modern UI/UX**: A highly responsive, glassmorphic dark theme with vibrant gradients.
 
 ## 🚀 Tech Stack
 
-- **Frontend**: Vanilla HTML5, CSS3, and JavaScript.
+- **Frontend**:  HTML5, CSS, and JavaScript.
 - **Backend**: Python 3.12+ 
 - **Networking**: `websockets` (Python library).
 
@@ -56,10 +55,6 @@ http://localhost:8000
 ```
 
 ---
-
-## 📸 Screenshots
-
-*(Add screenshots of your application here!)*
 
 ## 📄 License
 This project is open-source and available under the MIT License.
