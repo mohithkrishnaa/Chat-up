@@ -12,7 +12,7 @@ Chat-up! is a real-time, lightweight chat application built with a modern and re
 
 ## 🚀 Tech Stack
 
-- **Frontend**:  HTML5, CSS, and JavaScript.
+- **Frontend**: HTML5, CSS, and JavaScript.
 - **Backend**: Python 3.12+ 
 - **Networking**: `websockets` (Python library).
 
