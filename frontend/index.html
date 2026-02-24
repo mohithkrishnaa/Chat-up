@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Chat-up!</title>
+    <!-- Use Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=2">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Login Overlay -->
+    <div id="login-overlay" class="login-overlay">
+        <div class="login-box">
+            <h2>Welcome to Chat-up!</h2>
+            <input type="text" id="username" placeholder="Enter your username">
+            <button id="connect-btn" onclick="connect()">Connect</button>
+            <div id="login-error"></div>
+        </div>
+    </div>
+
+    <!-- Main App Container -->
+    <div class="app-container">
+
+        <!-- Column 1: App Sidebar/Nav -->
+        <nav class="app-nav">
+            <div class="nav-top">
+                <div class="my-avatar">
+                    <img src="https://ui-avatars.com/api/?name=User&background=333&color=fff" alt="Me"
+                        id="my-avatar-img">
+                </div>
+            </div>
+            <div class="nav-links">
+                <div class="nav-item"><i class="fas fa-border-all"></i></div>
+                <div class="nav-item active"><i class="fas fa-comment-dots"></i></div>
+                <div class="nav-item"><i class="fas fa-check-circle"></i></div>
+                <div class="nav-item"><i class="far fa-star"></i></div>
+            </div>
+            <div class="nav-bottom">
+                <div class="nav-item"><i class="fas fa-cog"></i></div>
+            </div>
+        </nav>
+
+        <!-- Column 2: Contact List -->
+        <div class="contact-panel">
+            <div class="brand-name">
+                <i class="fas fa-bolt"></i> Chat-up!
+            </div>
+            <div class="contact-header">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search in your inbox">
+                </div>
+            </div>
+
+            <div class="contact-list" id="user-list">
+                <!-- Dynamically populated -->
+                <!-- Example item -->
+            </div>
+        </div>
+
+        <!-- Column 3: Main Chat -->
+        <div class="chat-panel">
+            <div class="chat-header">
+                <div class="chat-header-user">
+                    <img src="https://ui-avatars.com/api/?name=?&background=random" alt="Avatar" id="active-chat-avatar"
+                        style="display:none;">
+                    <div class="chat-header-info">
+                        <h3 id="active-chat-name">Select a user to start chatting</h3>
+                        <span id="active-chat-status" class="status-offline">Offline</span>
+                    </div>
+                </div>
+                <div class="chat-header-actions" style="position: relative;">
+                    <i class="fas fa-paperclip"></i>
+                    <i class="fas fa-ellipsis-v" id="chat-options-btn" onclick="toggleChatOptions()"></i>
+                    <!-- Chat Options Dropdown -->
+                    <div id="chat-options-menu" class="dropdown-menu" style="display: none;">
+                        <a href="#" onclick="clearChat()">Clear Chat</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chat-history" id="chat-box">
+                <!-- Messages go here -->
+            </div>
+
+            <div class="chat-input-area" style="position: relative;">
+                <!-- Emoji Picker -->
+                <div id="emoji-picker" class="emoji-picker" style="display: none;">
+                    <span onclick="insertEmoji('😀')">😀</span>
+                    <span onclick="insertEmoji('😂')">😂</span>
+                    <span onclick="insertEmoji('😍')">😍</span>
+                    <span onclick="insertEmoji('🙏')">🙏</span>
+                    <span onclick="insertEmoji('👍')">👍</span>
+                    <span onclick="insertEmoji('🔥')">🔥</span>
+                    <span onclick="insertEmoji('🎉')">🎉</span>
+                    <span onclick="insertEmoji('❤️')">❤️</span>
+                    <span onclick="insertEmoji('😊')">😊</span>
+                    <span onclick="insertEmoji('😎')">😎</span>
+                </div>
+
+                <i class="far fa-smile" id="emoji-btn" onclick="toggleEmojiPicker()"></i>
+                <input type="text" id="message" placeholder="Type a message...">
+                <!-- Need a hidden input to store active receiver -->
+                <input type="hidden" id="receiver" value="">
+                <button onclick="sendMessage()" class="send-btn"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+
+        <!-- Column 4: Profile Details -->
+        <div class="profile-panel">
+            <div class="profile-header">
+                <h3>Profile Info</h3>
+            </div>
+            <div class="profile-info">
+                <img src="https://ui-avatars.com/api/?name=Info&background=333&color=fff" alt="Avatar"
+                    id="profile-pane-avatar">
+                <h2 id="profile-pane-name">User Name</h2>
+                <span id="profile-pane-status" class="status-offline">Offline</span>
+            </div>
+
+            <div class="profile-attachments">
+                <div class="attachment-header">
+                    <h4>Attachment</h4>
+                    <span class="badge">0</span>
+                </div>
+                <div class="attachment-grid">
+                    <p style="color: var(--text-muted); font-size: 13px; grid-column: span 3; text-align: center;">No
+                        attachments yet.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js?v=2"></script>
+</body>
+
+</html>
